@@ -21,7 +21,7 @@ or simply download using the url below
 https://github.com/shahzeb-01/Recruiterz-Django.git
 ```
 
-## Install requirements
+## Install requirements 
 
 ```
 pip install -r requirements.txt
