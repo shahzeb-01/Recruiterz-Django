@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import dj_database_url
 from django.contrib.messages import constants as messages
 import os
 
@@ -26,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'etdq)uvq=t0rc&ams5_ovn6w8bcwknjj0u97*(#n^(76x*+dr1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'recruiterz.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'herokuapp',
 
     'jobapp.apps.JobappConfig',
     'account.apps.AccountConfig',
@@ -59,7 +57,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'user_visit.middleware.UserVisitMiddleware',
 ]
@@ -81,7 +78,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 WSGI_APPLICATION = 'job.wsgi.application'
 
@@ -177,10 +173,5 @@ MESSAGE_TAGS = {
 
 # Activate Django-Heroku.
 # django_heroku.settings(locals())
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-prod_db = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
