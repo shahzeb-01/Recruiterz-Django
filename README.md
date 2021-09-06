@@ -15,10 +15,10 @@ Django 3.0
 
 ```
 open terminal and type
-https://github.com/Sany07/Job-Portal.git
+https://github.com/shahzeb-01/Recruiterz-Django.git
 
 or simply download using the url below
-https://github.com/Sany07/Job-Portal.git
+https://github.com/shahzeb-01/Recruiterz-Django.git
 ```
 
 ## Install requirements
