@@ -97,7 +97,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -174,10 +173,11 @@ MESSAGE_TAGS = {
 
 
 # Activate Django-Heroku.
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 django_heroku.settings(locals())
 
